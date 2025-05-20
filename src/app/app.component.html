@@ -348,5 +348,6 @@
       <app-user [id]="users[3].id" [avatar]="users[3].avatar" [name]="users[3].name" (select)="onSelectUser($event)"></app-user>
     </li>
   </ul>
+  <app-tasks [id]="selectedUserId" [name]="username" (select)="onSelectUser($event)"></app-tasks>
 </main>
 <router-outlet />
