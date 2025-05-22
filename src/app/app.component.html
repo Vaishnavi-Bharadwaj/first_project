@@ -33,7 +33,7 @@
     @for(user of users; track user.id)
     {
       <li>
-        <app-user [user]="user" (select)="onSelectUser($event)"></app-user>
+        <app-user [user]="user" [selected]="user.id===selectedUserId" (select)="onSelectUser($event)"></app-user> <!--selected property binding with boolean type is defined for showing the user to be active (for styling)-->
       </li>
     }
   </ul>

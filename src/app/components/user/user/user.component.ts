@@ -33,6 +33,7 @@ export class UserComponent {
 
   //Using interface to define input user
   @Input({required: true}) user!:User;
+  @Input({required: true}) selected!:boolean;
 
   @Output() select=new EventEmitter(); //using output decorator using EventEmitter
   //select=output<string>(); //using output function instead of the decorator (alternative way not widely used)

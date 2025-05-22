@@ -4,6 +4,7 @@ import { HeaderComponent } from "./components/header/header.component";
 import { UserComponent } from './components/user/user/user.component';
 import { DUMMY_USERS } from './dummy-users';
 import { TasksComponent } from "./components/tasks/tasks.component";
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, HeaderComponent, UserComponent, TasksComponent],
