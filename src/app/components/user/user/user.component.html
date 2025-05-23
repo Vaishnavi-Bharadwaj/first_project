@@ -1,4 +1,5 @@
-<div>
+<app-card> <!--using app card component instead of div here to access the div css globally for other components as well-->
+<!-- <div> -->
     <button [class.active]="selected" (click)="onSelectUser()"> <!--the selected user should stay highlighted when clicked-->
         <!-- <img [src]="'assets/users/users/'+ avatar" [alt]="name"/>
         <span>{{name}}</span> -->
@@ -7,4 +8,5 @@
         <img [src]="'assets/users/users/'+ user.avatar" [alt]="user.name"/>
         <span>{{user.name}}</span>
     </button>
-</div>
+<!-- </div> -->
+</app-card>

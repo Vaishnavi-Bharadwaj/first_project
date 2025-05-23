@@ -1,6 +1,6 @@
 @if(isAddingTask)
 {
-    <app-new-task (canceltask)="onCancelTask()" (add)="onAddTask($event)"></app-new-task>
+    <app-new-task [id]="id" (canceltask)="onCancelTask()"></app-new-task>
 } 
 <section id="tasks">
     <header>
@@ -11,10 +11,13 @@
     </header>
 
     <ul>
-        @for(task of selectedUserTasks; track task.id)
+        <!--track should make use of trackId instead of id here since while deleting a task from a user, if there are more than 1 task, deleting one will remove the other as well since it tracks id (userid)-->
+        <!-- @for(task of selectedUserTasks; track task.id)  -->
+        @for(task of selectedUserTasks; track task.taskId) 
         {
             <li>
-                <app-task [task]="task" (complete)="onCompleteTask($event)"></app-task> <!--bind the task property to the task object created in tasks component using interface -->
+                <!-- <app-task [task]="task" (complete)="onCompleteTask($event)"></app-task>  --> <!--bind the task property to the task object created in tasks component using interface -->
+                <app-task [task]="task"></app-task> <!--onCompleteTask is removed from here since the task component directly calls the removeTask from service-->
             </li>
         }
     </ul>
